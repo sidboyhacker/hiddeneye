@@ -13,8 +13,8 @@ import sys
 import ssl
 from os import system, environ
 
-if(not environ.get('PYTHONHTTPSVERIFY', "") and getattr(ssl, '_create_unverified_context', None)):
-    ssl._create_default_https_context = ssl._create_unverified_context
+# Removed insecure global SSL context modification.
+# This was a security flaw that disabled SSL certificate verification globally.
 
 
 RED, WHITE, CYAN, GREEN, DEFAULT = '\033[91m', '\033[46m', '\033[36m', '\033[1;32m',  '\033[0m'
